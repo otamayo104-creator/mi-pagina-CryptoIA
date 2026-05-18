@@ -17,17 +17,18 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    // No preventDefault() here so the form naturally submits to the action URL in a new tab
     setStatus('submitting');
-    // Simulate API call
+    
+    // Mostramos la UI de éxito localmente después de un momento
     setTimeout(() => {
       setStatus('success');
       setTimeout(() => {
         setStatus('idle');
         setFormData({ name: '', email: '', company: '', message: '' });
         onClose();
-      }, 2000);
-    }, 1500);
+      }, 3000);
+    }, 1000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -84,7 +85,17 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   <p className="text-gray-400 text-sm">Nos pondremos en contacto pronto.</p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form 
+                  action="https://formsubmit.co/otamayo104@gmail.com" 
+                  method="POST" 
+                  target="_blank"
+                  onSubmit={handleSubmit} 
+                  className="space-y-4"
+                >
+                  <input type="hidden" name="_subject" value={`Nuevo contacto web de ${formData.name || 'usuario'}`} />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  
                   <div className="space-y-1">
                     <label className="text-xs text-gray-400 font-medium ml-1">Nombre completo</label>
                     <input 

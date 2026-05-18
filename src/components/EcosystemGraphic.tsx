@@ -3,12 +3,12 @@ import { Database, Server, BrainCircuit, Network, Cpu, Microchip } from 'lucide-
 
 export default function EcosystemGraphic() {
   const nodes = [
-    { id: 1, x: 50, y: 25, color: 'text-crypto-blue', border: 'border-crypto-blue/40', bg: 'bg-crypto-blue/10', shadow: 'shadow-[0_0_30px_rgba(0,209,255,0.5)]', icon: BrainCircuit, delay: 0, size: 'w-16 h-16' },
-    { id: 2, x: 25, y: 65, color: 'text-crypto-orange', border: 'border-crypto-orange/40', bg: 'bg-crypto-orange/10', shadow: 'shadow-[0_0_30px_rgba(255,138,0,0.5)]', icon: Server, delay: 0.2, size: 'w-14 h-14' },
-    { id: 3, x: 75, y: 65, color: 'text-crypto-purple', border: 'border-crypto-purple/40', bg: 'bg-crypto-purple/10', shadow: 'shadow-[0_0_30px_rgba(157,78,221,0.5)]', icon: Network, delay: 0.4, size: 'w-14 h-14' },
-    { id: 4, x: 25, y: 35, color: 'text-emerald-400', border: 'border-emerald-400/30', bg: 'bg-emerald-400/10', shadow: 'shadow-[0_0_20px_rgba(52,211,153,0.3)]', icon: Cpu, delay: 0.6, size: 'w-10 h-10' },
-    { id: 5, x: 75, y: 35, color: 'text-white', border: 'border-white/30', bg: 'bg-white/10', shadow: 'shadow-[0_0_20px_rgba(255,255,255,0.3)]', icon: Microchip, delay: 0.8, size: 'w-10 h-10' },
-    { id: 6, x: 50, y: 80, color: 'text-crypto-blue', border: 'border-crypto-blue/30', bg: 'bg-crypto-blue/10', shadow: 'shadow-[0_0_20px_rgba(0,209,255,0.3)]', icon: Database, delay: 1.0, size: 'w-10 h-10' },
+    { id: 1, x: 50, y: 25, color: 'text-crypto-blue', border: 'border-crypto-blue/40', bg: 'bg-crypto-blue/10', shadow: 'shadow-[0_0_30px_rgba(0,209,255,0.5)]', icon: BrainCircuit, delay: 0, size: 'w-12 h-12 md:w-16 md:h-16' },
+    { id: 2, x: 25, y: 65, color: 'text-crypto-orange', border: 'border-crypto-orange/40', bg: 'bg-crypto-orange/10', shadow: 'shadow-[0_0_30px_rgba(255,138,0,0.5)]', icon: Server, delay: 0.2, size: 'w-10 h-10 md:w-12 md:h-12' },
+    { id: 3, x: 75, y: 65, color: 'text-crypto-purple', border: 'border-crypto-purple/40', bg: 'bg-crypto-purple/10', shadow: 'shadow-[0_0_30px_rgba(157,78,221,0.5)]', icon: Network, delay: 0.4, size: 'w-10 h-10 md:w-12 md:h-12' },
+    { id: 4, x: 25, y: 35, color: 'text-emerald-400', border: 'border-emerald-400/30', bg: 'bg-emerald-400/10', shadow: 'shadow-[0_0_20px_rgba(52,211,153,0.3)]', icon: Cpu, delay: 0.6, size: 'w-8 h-8 md:w-10 md:h-10' },
+    { id: 5, x: 75, y: 35, color: 'text-white', border: 'border-white/30', bg: 'bg-white/10', shadow: 'shadow-[0_0_20px_rgba(255,255,255,0.3)]', icon: Microchip, delay: 0.8, size: 'w-8 h-8 md:w-10 md:h-10' },
+    { id: 6, x: 50, y: 80, color: 'text-crypto-blue', border: 'border-crypto-blue/30', bg: 'bg-crypto-blue/10', shadow: 'shadow-[0_0_20px_rgba(0,209,255,0.3)]', icon: Database, delay: 1.0, size: 'w-8 h-8 md:w-10 md:h-10' },
   ];
 
   // Using SVG coordinate system mapped roughly to percentage
