@@ -1,0 +1,6 @@
+{
+  "name": "Crypto_IA",
+  "description": "Premium cinematic landing page for AI Fintech and Business Automation",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
