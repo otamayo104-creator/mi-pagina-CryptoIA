@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 
-export default function Navbar() {
+export default function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -34,7 +34,7 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:block">
-           <button className="text-base font-medium text-black px-6 py-2.5 rounded-full bg-crypto-blue hover:bg-white transition-colors shadow-[0_0_15px_rgba(0,209,255,0.3)]">
+           <button onClick={onOpenContact} className="text-base font-medium text-black px-6 py-2.5 rounded-full bg-crypto-blue hover:bg-white transition-colors shadow-[0_0_15px_rgba(0,209,255,0.3)]">
              Contactar
            </button>
         </div>
@@ -67,7 +67,7 @@ export default function Navbar() {
             <a href="#servicios" onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-crypto-blue">Soluciones</a>
             <a href="#casos" onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-crypto-blue">Resultados</a>
             <a href="#compañia" onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-crypto-blue">Compañía</a>
-            <button className="mt-8 text-lg font-medium text-black bg-white px-6 py-4 rounded-full">
+            <button onClick={() => { setMobileMenuOpen(false); onOpenContact?.(); }} className="mt-8 text-lg font-medium text-black bg-white px-6 py-4 rounded-full">
                Contactar
             </button>
           </nav>
