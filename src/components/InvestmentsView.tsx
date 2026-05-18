@@ -313,7 +313,7 @@ export default function InvestmentsView({ onBack }: InvestmentsViewProps) {
                 No solo inviertas en tokens, invierte en la red física que los procesa. Cede liquidez al pool para adquirir nodos GPU. Nuestra IA optimizará el arrendamiento de tu potencia a startups globales, y tú recibes dividendos automáticos vía Smart Contracts.
               </p>
               
-              <div className="flex gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <button className="px-6 py-3 bg-crypto-purple text-white font-semibold rounded-xl text-sm shadow-[0_0_20px_rgba(157,78,221,0.4)] hover:bg-purple-600 transition-colors flex items-center justify-center">
                   Entrar al Pool (USDC)
                 </button>

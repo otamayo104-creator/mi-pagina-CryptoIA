@@ -68,7 +68,7 @@ export default function WhatWeDo() {
         </motion.div>
 
         {/* Expansive Cards Container */}
-        <div className="flex flex-col lg:flex-row gap-4 h-[800px] lg:h-[600px] w-full">
+        <div className="flex flex-col lg:flex-row gap-4 h-[850px] lg:h-[600px] w-full">
           {cards.map((card, idx) => {
             const isActive = activeCard === idx;
             return (
