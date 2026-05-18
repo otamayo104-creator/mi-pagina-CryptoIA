@@ -20,10 +20,10 @@ export default function Footer() {
               <motion.a whileHover={{ y: -5, scale: 1.1, backgroundColor: "rgba(255,255,255,0.15)" }} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
                 <Linkedin className="w-5 h-5" />
               </motion.a>
-              <motion.a whileHover={{ y: -5, scale: 1.1, backgroundColor: "rgba(255,255,255,0.15)" }} href="https://www.instagram.com/yosinjefe/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+              <motion.a whileHover={{ y: -5, scale: 1.1, backgroundColor: "rgba(255,255,255,0.15)" }} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
               </motion.a>
-              <motion.a whileHover={{ y: -5, scale: 1.1, backgroundColor: "rgba(255,255,255,0.15)" }} href="https://www.facebook.com/profile.php?id=61569242247269" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+              <motion.a whileHover={{ y: -5, scale: 1.1, backgroundColor: "rgba(255,255,255,0.15)" }} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
                 <Facebook className="w-5 h-5" />
               </motion.a>
               <motion.a whileHover={{ y: -5, scale: 1.1, backgroundColor: "rgba(255,255,255,0.15)" }} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white transition-colors">

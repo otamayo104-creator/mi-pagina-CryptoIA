@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Network } from 'lucide-react';
 
-export default function Hero({ onOpenContact, onOpenInvestments }: { onOpenContact?: () => void, onOpenInvestments?: () => void }) {
+export default function Hero({ onOpenContact }: { onOpenContact?: () => void }) {
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], ['0%', '30%']);
   const orbsY1 = useTransform(scrollY, [0, 1000], ['0%', '50%']);
@@ -68,7 +68,6 @@ export default function Hero({ onOpenContact, onOpenInvestments }: { onOpenConta
               Automatizar mi negocio
             </motion.button>
             <motion.button 
-              onClick={onOpenInvestments}
               whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 209, 255, 0.1)", borderColor: "rgba(0, 209, 255, 0.8)", boxShadow: "0 0 30px rgba(0, 209, 255, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               className="w-full sm:w-auto px-8 py-4 glass-panel text-white font-medium text-sm rounded-full border border-white/10 transition-all relative overflow-hidden group"

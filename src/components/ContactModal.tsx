@@ -14,20 +14,17 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     company: '',
     message: ''
   });
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('submitting');
-    // Simulate API call
+  const handleSubmit = () => {
+    // We let the form do its native submission to target="_blank"
+    // Then we close the modal after a short delay
+    setIsSubmitting(true);
     setTimeout(() => {
-      setStatus('success');
-      setTimeout(() => {
-        setStatus('idle');
-        setFormData({ name: '', email: '', company: '', message: '' });
-        onClose();
-      }, 2000);
-    }, 1500);
+      setIsSubmitting(false);
+      setFormData({ name: '', email: '', company: '', message: '' });
+      onClose();
+    }, 1000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -66,25 +63,18 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 <p className="text-gray-400 font-light text-sm">Déjanos tus datos y un especialista en IA se pondrá en contacto contigo.</p>
               </div>
 
-              {status === 'success' ? (
-                <motion.div 
-                  initial={{ opacity: 0 }} 
-                  animate={{ opacity: 1 }} 
-                  className="flex flex-col items-center justify-center py-12 text-center"
+                <form 
+                  action="https://formsubmit.co/yosinjefe@gmail.com" 
+                  method="POST" 
+                  target="_blank"
+                  onSubmit={handleSubmit} 
+                  className="space-y-4"
                 >
-                  <div className="w-16 h-16 rounded-full bg-crypto-blue/20 flex items-center justify-center mb-6">
-                    <motion.div 
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ type: "spring", delay: 0.2 }}
-                      className="w-8 h-8 rounded-full bg-crypto-blue"
-                    />
-                  </div>
-                  <h4 className="text-xl text-white font-medium mb-2">¡Mensaje enviado!</h4>
-                  <p className="text-gray-400 text-sm">Nos pondremos en contacto pronto.</p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* FormSubmit Configuration */}
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_subject" value={`Nuevo mensaje de contacto de ${formData.name}`} />
+
                   <div className="space-y-1">
                     <label className="text-xs text-gray-400 font-medium ml-1">Nombre completo</label>
                     <input 
@@ -138,17 +128,12 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
                   <button 
                     type="submit" 
-                    disabled={status === 'submitting'}
+                    disabled={isSubmitting}
                     className="w-full mt-6 px-6 py-4 rounded-xl bg-crypto-blue text-black font-semibold text-sm hover:bg-white transition-all shadow-[0_0_20px_rgba(0,209,255,0.2)] hover:shadow-[0_0_30px_rgba(0,209,255,0.4)] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
-                    {status === 'submitting' ? (
-                      <span className="animate-pulse">Enviando...</span>
-                    ) : (
-                      'Solicitar contacto'
-                    )}
+                    Solicitar contacto
                   </button>
                 </form>
-              )}
             </div>
           </motion.div>
         </>
